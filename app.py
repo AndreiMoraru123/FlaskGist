@@ -1,4 +1,4 @@
-from flask import Flask, render_template, request
+from flask import Flask, render_template, request, jsonify
 import requests
 
 app = Flask(__name__)
@@ -33,25 +33,31 @@ def gist(gist_id):
     return render_template('gists.html', gist=gist, files=files)
 
 
+import requests
+
 @app.route('/file/<file_id>')
 def file(file_id):
+    # Send a request to the API to get the metadata for the Gist
     api_url = f'https://api.github.com/gists/{file_id}'
     r = requests.get(api_url)
     gist = r.json()
-
-    # Find the file with the specified file_id in the gist
-    file = None
-    for f in gist['files']:
-        if f['id'] == file_id:
-            file = f
+    # Find the file object in the Gist with the matching file_id
+    file_obj = None
+    for file in gist['files']:
+        if file['id'] == file_id:
+            file_obj = file
             break
 
-    if file:
-        # Return the content of the file to the client
-        return { 'content': file['content'] }
+    # If a file object was found, send a request to the URL of the file to get its content
+    if file_obj:
+        r = requests.get(file_obj['raw_url'])
+        content = r.text
     else:
-        # Return an error if the file was not found
-        return { 'error': 'File not found' }, 404
+        content = 'Error: file not found'
+
+    # Return the content as a JSON object
+    return jsonify({'content': content})
+
 
 
 if __name__ == '__main__':
