@@ -10,6 +10,9 @@
     <orderEntry type="library" name="react" level="application" />
     <orderEntry type="library" name="react-dom" level="application" />
     <orderEntry type="library" name="axios" level="application" />
+    <orderEntry type="library" name="default" level="application" />
+    <orderEntry type="library" name="highlight" level="application" />
+    <orderEntry type="library" name="darcula" level="application" />
   </component>
   <component name="TemplatesService">
     <option name="TEMPLATE_CONFIGURATION" value="Jinja2" />

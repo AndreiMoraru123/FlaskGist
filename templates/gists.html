@@ -3,6 +3,9 @@
   <head>
     <title>Gist Finder</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <!-- Include the highlight.js library and style sheets -->
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.3.2/styles/darcula.min.css">
+    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.3.2/highlight.min.js"></script>
   </head>
   <body>
     <h1>{{ gist.description }}</h1>
@@ -16,10 +19,13 @@
         <div style="width: 20px; height: 20px; background-color: {{ logo.color }}; border-radius: 50%; margin-right: 8px;"></div>
         {{ logo.name }}
       </div>
-      <pre>{{ file.content }}</pre>
+      <!-- Add the "hljs" class to the code element -->
+      <pre><code class="hljs language-{{ file_ext }}">{{ file.content }}</code></pre>
     {% endfor %}
 
     {# Include the logos.js script to use the logoMap object #}
     <script src="/static/logos.js"></script>
+    <!-- Initialize highlight.js -->
+    <script>hljs.initHighlightingOnLoad();</script>
   </body>
 </html>
