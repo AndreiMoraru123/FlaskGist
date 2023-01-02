@@ -44,29 +44,6 @@ def gist(gist_id):
 
     return render_template('gists.html', gist=gist, files=files)
 
-# @app.route('/file/<file_id>')
-# def file(file_id):
-#     # Send a request to the API to get the metadata for the Gist
-#     api_url = f'https://api.github.com/gists/{file_id}'
-#     r = requests.get(api_url)
-#     gist = r.json()
-#     # Find the file object in the Gist with the matching file_id
-#     file_obj = None
-#     for file in gist['files']:
-#         if file['id'] == file_id:
-#             file_obj = file
-#             break
-#
-#     # If a file object was found, send a request to the URL of the file to get its content
-#     if file_obj:
-#         r = requests.get(file_obj['raw_url'])
-#         content = r.text
-#     else:
-#         content = 'Error: file not found'
-#
-#     # Return the content as a JSON object
-#     return jsonify({'content': content})
-
 
 if __name__ == '__main__':
     app.run(debug=True)

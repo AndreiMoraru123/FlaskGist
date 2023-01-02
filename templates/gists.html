@@ -8,6 +8,9 @@
     <h1>{{ gist.description }}</h1>
     {% for file in files %}
       <h2>{{ file.filename }}</h2>
+      {# Extract the file extension from the filename #}
+      {% set file_ext = file.filename.split('.')[-1] %}
+      <span class="badge">{{ file_ext }}</span>
       <pre>{{ file.content }}</pre>
     {% endfor %}
   </body>
