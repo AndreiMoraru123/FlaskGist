@@ -17,7 +17,16 @@
 <script src="/static/app.js"></script>
 <script>
   import GistFinder from "/static/app";
-  ReactDOM.render(<GistFinder />, document.getElementById("root"));
+  import ReactDOM from "react-dom";
+   import { BrowserRouter } from "react-router-dom";
+  {#ReactDOM.render(<GistFinder />, document.getElementById("root"));#}
+  ReactDOM.render(<GistFinder gists={gists} />, document.getElementById("root"));
+  ReactDOM.render(
+    <BrowserRouter>
+      <GistFinder gists={gists} />
+    </BrowserRouter>,
+    document.getElementById("root")
+  );
 </script>
 
 </html>

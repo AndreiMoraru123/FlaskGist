@@ -8,10 +8,28 @@
     <h1>{{ gist.description }}</h1>
     {% for file in gist.files %}
       <h2>{{ file.filename }}</h2>
-      <pre>{{ file.content }}</pre>
+      <pre id="{{ file.id }}">Loading...</pre>
     {% endfor %}
   </body>
 {# add react from app.js#}
     <script src="{{ url_for('static', filename='app.js') }}"></script>
 
 </html>
+
+<script>
+  // Make an AJAX request to the /file/<file_id> route for each file in the gist
+  {% for file in gist.files %}
+    const xhr = new XMLHttpRequest();
+    xhr.open('GET', '/file/{{ file.id }}');
+    xhr.onload = function() {
+      if (xhr.status === 200) {
+        // Update the content of the <pre> element with the file content
+        document.getElementById('{{ file.id }}').innerText = xhr.response.content;
+      } else {
+        // Display an error message if the request fails
+        document.getElementById('{{ file.id }}').innerText = 'Error loading file';
+      }
+    };
+    xhr.send();
+  {% endfor %}
+</script>

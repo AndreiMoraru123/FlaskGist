@@ -14,7 +14,9 @@
 
     {% for gist in gists %}
       <div class="gist">
-        <h2>{{ gist.description }}</h2>
+        <h2>
+          <a href="{{ url_for('gist', gist_id=gist.id) }}">{{ gist.description }}</a>
+        </h2>
         {% for file in gist.files %}
           <span class="badge">{{ file.type }}</span>
         {% endfor %}
@@ -22,7 +24,7 @@
         <ul>
           {% for fork in gist.forks %}
             <li>
-              <img src="{{ fork.user.avatar_url }}" alt="{{ fork.user.login }}" class="avatar">
+              <img src="{{ fork.user.avatar_url }}" alt="{{ fork.user.login }}" class="avatar" />
               {{ fork.user.login }}
             </li>
           {% endfor %}
@@ -30,5 +32,4 @@
       </div>
     {% endfor %}
   </body>
-    <script src="{{ url_for('static', filename='app.js') }}"></script>
 </html>

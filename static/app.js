@@ -9,16 +9,6 @@ const GistFinder = ({ gists }) => {
           {gist.files.map((file) => (
             <span key={file.filename} className="badge">{file.type}</span>
           ))}
-          <h3>Forks:</h3>
-          <ul>
-            {gist.forks.map((fork) => (
-              <li key={fork.id}>
-                <img src={fork.user.avatar_url} alt={fork.user.login} className="avatar" />
-                {fork.user.login}
-              </li>
-            ))}
-          </ul>
-          <a href={`/gist/${gist.id}`}>View Gist</a>
         </div>
       ))}
     </div>
@@ -26,4 +16,3 @@ const GistFinder = ({ gists }) => {
 };
 
 export default GistFinder;
-
