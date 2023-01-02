@@ -1,0 +1,14 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Gist Finder</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+  </head>
+  <body>
+    <h1>{{ gist.description }}</h1>
+    {% for file in gist.files %}
+      <h2>{{ file.filename }}</h2>
+      <pre>{{ file.content }}</pre>
+    {% endfor %}
+  </body>
+</html>

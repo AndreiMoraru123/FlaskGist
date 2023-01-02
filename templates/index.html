@@ -1,0 +1,15 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Gist Finder</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+  </head>
+  <body>
+    <h1>Gist Finder</h1>
+    <form method="POST" action="{{ url_for('search') }}">
+      <label for="username">Enter a username:</label>
+      <input type="text" name="username" id="username">
+      <input type="submit" value="Search">
+    </form>
+  </body>
+</html>
