@@ -3,8 +3,7 @@
 Flask GitHub API app to get any user's Gist contributions 
 
 ## Search the user
-
-![image](https://user-images.githubusercontent.com/81184255/210281414-3192fa36-3c37-483b-a2cd-79b02c36f8d7.png)
+![1](https://user-images.githubusercontent.com/81184255/210281463-0195b858-4cf0-48f7-84f1-dcf006c40613.jpg)
 
 ## Each gist will have the last three fork owners displayed
 ![2](https://user-images.githubusercontent.com/81184255/210280577-e025ac1f-ab88-48f9-a500-9aebbde522a1.jpg)
