@@ -1,33 +1,201 @@
-body {
-  font-family: sans-serif;
+/* Define the main color scheme */
+:root {
+  --primary-text-color: hsl(0, 0%, 100%);
+  --secondary-text-color: hsl(0, 0%, 50%);
+  --primary-background-color: hsl(0, 0%, 10%);
+  --secondary-background-color: hsl(0, 0%, 20%);
+  --accent-color: hsl(180, 100%, 50%);
+  --highlight-color: hsl(180, 100%, 25%);
 }
 
-h1, h2, h3 {
+/* Reset default styles */
+* {
   margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-.gist {
-  margin: 20px 0;
+/* Set the font and text styles */
+html {
+  font-size: 16px;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
 }
 
-.badge {
+body {
+  color: var(--primary-text-color);
+  background-color: var(--primary-background-color);
+}
+
+h1, h2, h3, h4, h5, h6 {
+  color: var(--secondary-text-color);
+  font-weight: 500;
+}
+
+p {
+  margin: 1em 0;
+  line-height: 1.5;
+}
+
+a {
+  color: var(--accent-color);
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* Set the header styles */
+header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1em;
+}
+
+header h1 {
+  font-size: 2em;
+}
+
+/* Set the main content styles */
+main {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 1em;
+}
+
+/* Set the footer styles */
+footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1em;
+  background-color: var(--secondary-background-color);
+}
+
+/* Set the navigation styles */
+nav {
+  display: flex;
+}
+
+nav ul {
+  display: flex;
+  list-style: none;
+}
+
+nav li {
+  margin-right: 1em;
+}
+
+nav a {
+  color: var(--primary-text-color);
+}
+
+nav a:hover {
+  color: var(--accent-color);
+}
+
+/* Set the button styles */
+button {
   display: inline-block;
-  padding: 5px 10px;
-  border-radius: 5px;
-  background-color: #eee;
-  margin-right: 10px;
+  padding: 0.5em 1em;
+  border: none;
+  border-radius: 4px;
+  background-color: var(--accent-color);
+  color: var(--primary-text-color);
+  font-weight: 500;
 }
 
-.avatar {
-  width: 50px;
-  height: 50px;
-  border-radius: 50%;
-  vertical-align: middle;
-  margin-right: 10px;
+
+.js {
+  background-color: #f7df1e;
+  color: #333;
 }
 
-pre {
-  background-color: #f4f4f4;
-  padding: 20px;
-  white-space: pre-wrap;
+.py {
+  background-color: #3572A5;
+  color: #fff;
 }
+
+.html {
+  background-color: #e34c26;
+  color: #fff;
+}
+
+.css {
+  background-color: #563d7c;
+  color: #fff;
+}
+
+
+.java {
+  background-color: #b07219;
+  color: #fff;
+}
+
+.c {
+  background-color: #555;
+  color: #fff;
+}
+
+.cs {
+  background-color: #178600;
+  color: #fff;
+}
+
+.cpp {
+  background-color: #f34b7d;
+  color: #fff;
+}
+
+.rb {
+  background-color: #701516;
+  color: #fff;
+}
+
+.go {
+  background-color: #375eab;
+  color: #fff;
+}
+
+.swift {
+  background-color: #ffac45;
+  color: #fff;
+}
+
+.sh {
+  background-color: #89e051;
+  color: #333;
+}
+
+.rs {
+  background-color: #dea584;
+  color: #333;
+}
+
+.hs {
+  background-color: #5e5086;
+  color: #fff;
+}
+
+.lua {
+  background-color: #000080;
+  color: #fff;
+}
+
+.erl {
+  background-color: #b83998;
+  color: #fff;
+}
+
+.ex {
+  background-color: #6e4a7e;
+  color: #fff;
+}
+
+.ps1 {
+  background-color: #012456;
+  color: #fff;
+}
+
+

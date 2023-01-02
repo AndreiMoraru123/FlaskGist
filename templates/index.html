@@ -11,22 +11,20 @@
       <input type="text" name="username" id="username">
       <input type="submit" value="Search">
     </form>
+    <div id="root"></div>
   </body>
-<script src="https://unpkg.com/react@16/umd/react.development.js"></script>
-<script src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script>
-<script src="/static/app.js"></script>
-<script>
-  import GistFinder from "/static/app";
-  import ReactDOM from "react-dom";
-   import { BrowserRouter } from "react-router-dom";
-  {#ReactDOM.render(<GistFinder />, document.getElementById("root"));#}
-  ReactDOM.render(<GistFinder gists={gists} />, document.getElementById("root"));
-  ReactDOM.render(
-    <BrowserRouter>
-      <GistFinder gists={gists} />
-    </BrowserRouter>,
-    document.getElementById("root")
-  );
-</script>
-
+  <script src="https://unpkg.com/react@16/umd/react.development.js"></script>
+  <script src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script>
+  <script src="/static/app.js"></script>
+  <script>
+    import GistFinder from '/static/app';
+    import ReactDOM from 'react-dom';
+    import { BrowserRouter } from 'react-router-dom';
+    ReactDOM.render(
+      <BrowserRouter>
+        <GistFinder gists={gists} />
+      </BrowserRouter>,
+      document.getElementById('root')
+    );
+  </script>
 </html>

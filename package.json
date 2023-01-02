@@ -2,6 +2,7 @@
   "name": "FlaskGist",
   "version": "1.0.0",
   "dependencies": {
+    "programming-languages-logos": "0.0.3",
     "react-dom": "^18.2.0",
     "react-router-dom": "^6.6.1"
   }

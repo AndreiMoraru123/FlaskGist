@@ -7,11 +7,19 @@
   <body>
     <h1>{{ gist.description }}</h1>
     {% for file in files %}
-      <h2>{{ file.filename }}</h2>
       {# Extract the file extension from the filename #}
       {% set file_ext = file.filename.split('.')[-1] %}
-      <span class="badge">{{ file_ext }}</span>
+      {# Get the logo from the logo map #}
+      {% set logo = logoMap[file_ext] %}
+      {# Display the language tag #}
+      <div class="language-tag" style="display: flex; align-items: center;">
+        <div style="width: 20px; height: 20px; background-color: {{ logo.color }}; border-radius: 50%; margin-right: 8px;"></div>
+        {{ logo.name }}
+      </div>
       <pre>{{ file.content }}</pre>
     {% endfor %}
+
+    {# Include the logos.js script to use the logoMap object #}
+    <script src="/static/logos.js"></script>
   </body>
 </html>

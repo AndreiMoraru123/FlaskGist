@@ -13,4 +13,3 @@ const GistForm = ({ onSubmit }) => {
 };
 
 export default GistForm;
-
