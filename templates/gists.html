@@ -6,29 +6,9 @@
   </head>
   <body>
     <h1>{{ gist.description }}</h1>
-    {% for file in gist.files %}
+    {% for file in files %}
       <h2>{{ file.filename }}</h2>
-      <pre id="{{ file.id }}">Loading...</pre>
+      <pre>{{ file.content }}</pre>
     {% endfor %}
-
-    <script>
-      // Make an AJAX request to the /file/<file_id> route for each file in the gist
-      {% for file in files %}
-      const xhr = new XMLHttpRequest();
-      xhr.open('GET', '/file/{{ file.id }}');
-      xhr.onload = function() {
-        if (xhr.status === 200) {
-          // Parse the response as a JSON object
-          const response = JSON.parse(xhr.response);
-          // Update the content of the <div> element with the file content
-          document.getElementById('{{ file.id }}').innerText = response.content;
-        } else {
-          // Display an error message if the request fails
-          document.getElementById('{{ file.id }}').innerText = 'Error loading file';
-        }
-      };
-      xhr.send();
-      {% endfor %}
-    </script>
   </body>
 </html>

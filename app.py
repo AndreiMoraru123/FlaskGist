@@ -28,36 +28,44 @@ def gist(gist_id):
     gist = r.json()
 
     # Process the gist data and extract the necessary information
-    files = gist['files']
+    files = []
+    for filename, file in gist['files'].items():
+        try:
+            # Make a request to the file's raw URL to get its content
+            r = requests.get(file['raw_url'])
+            content = r.text
+            # Add the content to the file object
+            file['content'] = content
+        except Exception as e:
+            # Set the content to an error message if the request fails
+            file['content'] = f'Error loading file: {e}'
+            print(f'Error loading file: {e}')
+        files.append(file)
 
     return render_template('gists.html', gist=gist, files=files)
 
-
-import requests
-
-@app.route('/file/<file_id>')
-def file(file_id):
-    # Send a request to the API to get the metadata for the Gist
-    api_url = f'https://api.github.com/gists/{file_id}'
-    r = requests.get(api_url)
-    gist = r.json()
-    # Find the file object in the Gist with the matching file_id
-    file_obj = None
-    for file in gist['files']:
-        if file['id'] == file_id:
-            file_obj = file
-            break
-
-    # If a file object was found, send a request to the URL of the file to get its content
-    if file_obj:
-        r = requests.get(file_obj['raw_url'])
-        content = r.text
-    else:
-        content = 'Error: file not found'
-
-    # Return the content as a JSON object
-    return jsonify({'content': content})
-
+# @app.route('/file/<file_id>')
+# def file(file_id):
+#     # Send a request to the API to get the metadata for the Gist
+#     api_url = f'https://api.github.com/gists/{file_id}'
+#     r = requests.get(api_url)
+#     gist = r.json()
+#     # Find the file object in the Gist with the matching file_id
+#     file_obj = None
+#     for file in gist['files']:
+#         if file['id'] == file_id:
+#             file_obj = file
+#             break
+#
+#     # If a file object was found, send a request to the URL of the file to get its content
+#     if file_obj:
+#         r = requests.get(file_obj['raw_url'])
+#         content = r.text
+#     else:
+#         content = 'Error: file not found'
+#
+#     # Return the content as a JSON object
+#     return jsonify({'content': content})
 
 
 if __name__ == '__main__':
