@@ -17,7 +17,7 @@ Flask GitHub API app to get any user's Gist contributions
 To check your status, use this:
 
 ```bash
-> curl -I https://api.github.com/users/YourUserName
+curl -I https://api.github.com/users/YourUserName
 ```
 
 > **Note**
