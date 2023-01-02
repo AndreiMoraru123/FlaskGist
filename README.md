@@ -8,7 +8,7 @@ Flask GitHub API app to get any user's Gist contributions
 ## Each gist will have the last three fork owners displayed
 ![2](https://user-images.githubusercontent.com/81184255/210282348-7b535d4e-8abe-4639-b68e-9e170333f8f3.jpg)
 
-## When clicked, the gist will show the code content along with a GitHub-like programming language tag
+## When clicked, the gist will show the content along with a GitHub-like language tag
 ![3](https://user-images.githubusercontent.com/81184255/210282386-ad0c5b12-88d2-40d5-8474-077635b11a9d.jpg)
 
 > **Warning**
