@@ -13,6 +13,7 @@
     <orderEntry type="library" name="default" level="application" />
     <orderEntry type="library" name="highlight" level="application" />
     <orderEntry type="library" name="darcula" level="application" />
+    <orderEntry type="library" name="night-owl" level="application" />
   </component>
   <component name="TemplatesService">
     <option name="TEMPLATE_CONFIGURATION" value="Jinja2" />
