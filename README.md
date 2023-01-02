@@ -12,7 +12,7 @@ Flask GitHub API app to get any user's Gist contributions
 ![3](https://user-images.githubusercontent.com/81184255/210282386-ad0c5b12-88d2-40d5-8474-077635b11a9d.jpg)
 
 > **Warning**
-> Sometimes the GitHub APi will reach its limit (60 request/h/ip).
+> Sometimes the GitHub Gist API will reach its limit (60 request/h/ip).
 
 To check your status, use this:
 
