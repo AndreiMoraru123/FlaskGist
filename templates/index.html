@@ -5,26 +5,19 @@
     <link rel="stylesheet" href="/static/style.css">
   </head>
   <body>
-    <h1>Gist Finder</h1>
-    <form method="POST" action="{{ url_for('search') }}">
-      <label for="username">Enter a username:</label>
-      <input type="text" name="username" id="username">
-      <input type="submit" value="Search">
-    </form>
+    <div style="display: flex; align-items: center; justify-content: center; height: 100%;">
+      <div style="text-align: center;">
+        <h1 style="font-size: 3em;">Gist Finder</h1>
+        <form method="POST" action="{{ url_for('search') }}">
+          <label style="font-size: 1.5em;" for="username">Enter a username:</label>
+          <br>
+          <input style="font-size: 1.5em; width: 15em;" type="text" name="username" id="username">
+          <br>
+          <br>
+          <input style="font-size: 1.5em; width: 15em;" type="submit" value="Search">
+        </form>
+      </div>
+    </div>
     <div id="root"></div>
   </body>
-  <script src="https://unpkg.com/react@16/umd/react.development.js"></script>
-  <script src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script>
-  <script src="/static/app.js"></script>
-  <script>
-    import GistFinder from '/static/app';
-    import ReactDOM from 'react-dom';
-    import { BrowserRouter } from 'react-router-dom';
-    ReactDOM.render(
-      <BrowserRouter>
-        <GistFinder gists={gists} />
-      </BrowserRouter>,
-      document.getElementById('root')
-    );
-  </script>
 </html>

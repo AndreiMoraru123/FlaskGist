@@ -5,13 +5,6 @@
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
   </head>
   <body>
-    <h1>Gist Finder</h1>
-    <form method="POST" action="{{ url_for('search') }}">
-      <label for="username">Enter a username:</label>
-      <input type="text" name="username" id="username">
-      <input type="submit" value="Search">
-    </form>
-
     {% for gist in gists %}
       <div class="gist">
         <h2>
@@ -22,10 +15,9 @@
         {% endfor %}
         <h3>Forks:</h3>
         <ul>
-          {% for fork in gist.forks %}
+          {% for fork in gist_forks[gist.id][-3:] %}
             <li>
-              <img src="{{ fork.user.avatar_url }}" alt="{{ fork.user.login }}" class="avatar" />
-              {{ fork.user.login }}
+              {{ fork.owner.login }}
             </li>
           {% endfor %}
         </ul>

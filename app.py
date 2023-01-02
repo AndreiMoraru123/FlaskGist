@@ -16,9 +16,16 @@ def search():
     r = requests.get(api_url)
     gists = r.json()
 
-    # Process the gists data and extract the necessary information
+    gist_forks = {}
+    for gist in gists:
+        try:
+            forks_url = gist['forks_url']
+            r = requests.get(forks_url)
+            gist_forks[gist['id']] = r.json()
+        except TypeError:  # this is in case the API limit is reached
+            continue
 
-    return render_template('search_results.html', gists=gists)
+    return render_template('search_results.html', gists=gists, gist_forks=gist_forks)
 
 
 @app.route('/gist/<gist_id>')
