@@ -11,4 +11,7 @@
       <pre>{{ file.content }}</pre>
     {% endfor %}
   </body>
+{# add react from app.js#}
+    <script src="{{ url_for('static', filename='app.js') }}"></script>
+
 </html>
