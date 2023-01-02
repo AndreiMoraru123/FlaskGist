@@ -1,6 +1,6 @@
 # FlaskGist
 
-Flask API app to get a list of GitHub gists for a particular user
+Flask GitHub API app to get any user's Gist contributions 
 
 ![1](https://user-images.githubusercontent.com/81184255/210280565-5df64f27-2381-4536-b9ba-e03e25cc4879.jpg)
 
