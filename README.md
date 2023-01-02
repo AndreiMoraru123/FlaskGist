@@ -1,4 +1,4 @@
-# FlaskGist
+# GitGist
 
 Flask GitHub API app to get any user's Gist contributions 
 
