@@ -9,7 +9,7 @@ Flask GitHub API app to get any user's Gist contributions
 ![2](https://user-images.githubusercontent.com/81184255/210282348-7b535d4e-8abe-4639-b68e-9e170333f8f3.jpg)
 
 ## When clicked, the gist will show the code content along with a GitHub-like programming language tag
-![3](https://user-images.githubusercontent.com/81184255/210280583-fe343958-e03d-41b1-a4ea-78af0eb64011.jpg)
+![3](https://user-images.githubusercontent.com/81184255/210282386-ad0c5b12-88d2-40d5-8474-077635b11a9d.jpg)
 
 > **Warning**
 > Sometimes the GitHub APi will reach its limit (60 request/h/ip).
