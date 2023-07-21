@@ -13,7 +13,7 @@ GitHub Gist API app to get any user's Gist contributions
 ### 3. When clicked, the gist will show the code content along with a GitHub-like language tag
 ![3](https://user-images.githubusercontent.com/81184255/210282386-ad0c5b12-88d2-40d5-8474-077635b11a9d.jpg)
 
-> **Warning**
+> [!WARNING]\
 > Sometimes the GitHub Gist API will reach its limit (60 request/h/ip) :P
 
 To check your status, use this:
@@ -22,7 +22,7 @@ To check your status, use this:
 curl -I https://api.github.com/users/YourUserName
 ```
 
-> **Note**
+> [!NOTE]\
 > This will give you the Unix time for your reset limit like this:
 
 ```
